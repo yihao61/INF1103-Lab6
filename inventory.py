@@ -1,24 +1,30 @@
 class Inventory:
-    def __init__(self):
-        self.__inventory = []
+    def __init__(self, inventory=[]):
+        self.__inventory = inventory
 
-    
+    def get_inventory(self):
+        return self.__inventory
+
+    def get_all_product_ids(self):
+        all_ids = [product.get_product_id() for product in self.__inventory]
+        return all_ids
+
     def add_product(self, prod):
-        self.__inventory.append([prod.get_product_id(), prod.get_name(), prod.get_price(), prod.get_stock()])
+        self.__inventory.append(prod)
         print("\nProduct added successfully!")
-
+        return
 
     def update_stock(self):
         print("\nUpdate Stock")
         idinp = input("Enter Product ID: ")
-        for dict in self.__inventory:
-            if idinp == dict["id"]:
-                print(f"\nProduct Found:\nName: {dict['name']}\nCurrent Stock: {dict['stock']}\n")
+        for prod in self.__inventory:
+            if idinp == prod.get_product_id():
+                print(f"\nProduct Found:\nName: {prod.get_name()}\nCurrent Stock: {prod.get_stock()}\n")
                 while True:
                     usrinp = input("New Stock Quantity: ")
                     try:
                         validn = int(usrinp)
-                        dict["stock"] = validn
+                        prod.update_stock(validn)
                         print("\nStock updated successfully!")
                         break
                     except ValueError:
@@ -31,38 +37,28 @@ class Inventory:
         print("\nSearch Product")
         idinp = input("Enter Product ID: ")
 
-        for dict in self.__inventory:
-            if dict["id"] == idinp:
+        for prod in self.__inventory:
+            if prod.get_product_id() == idinp:
                 print("\nProduct Found!")
                 print("------------------------------------------------")
-                print(f"ID: {dict['id']}\nName: {dict['name']}\nPrice: ${dict['price']}\nStock: {dict['stock']}")
+                print(f"ID: {prod.get_product_id()}\nName: {prod.get_name()}\nPrice: ${prod.get_price()}\nStock: {prod.get_stock()}")
                 print("------------------------------------------------")
                 found = True
 
         if not found:
-            print("Product no found")
+            print("Product not found")
         
         return
 
-    def display_all(self, inv):
+    def display_all(self):
         print("\nCurrent Inventory\n"
             "------------------------------------------------")
-        for dict in inv:
-            print(f"ID: {dict['id']} | Name: {dict['name']} | Price: ${dict['price']} | Stock: {dict['stock']}")
+        for prod in self.__inventory:
+            print(f"ID: {prod.get_product_id()} | Name: {prod.get_name()} | Price: ${prod.get_price()} | Stock: {prod.get_stock()}")
         print("------------------------------------------------")
         return
 
 
-    def get_valid_input(self):
-        while True:
-            try:
-                user = input("\nEnter option: ")
-                value = int(user)
-                if 1 <= value <= 6:
-                    return value
-
-                print("Number Out of range! Please choose options 1-6.")
-            except ValueError:
-                print("Invalid Option entered, please try again.")        
+    
 
     
