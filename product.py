@@ -9,9 +9,6 @@ class Product:
         if quantity >= 0: 
             self.__stock = quantity
 
-    def display_information(self):
-        print(f"ID: {self.__id}\nName: {self.__name}\nPrice: ${self.__price}\nStock: {self.__stock}")
-
     def get_product_id(self):
         return self.__id
 
