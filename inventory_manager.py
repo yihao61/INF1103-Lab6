@@ -54,12 +54,12 @@ def main():
                             print("ID already exits. Please pick a new one.")
                             continue
             
-                        newprod["id"] = idinp
+                        newprod["_Product__id"] = idinp
                         progress+=1
             
                     elif progress == 1:
                         nameinp = input("Product Name: ")
-                        newprod["name"] = nameinp
+                        newprod["_Product__name"] = nameinp
                         progress+=1
             
                     elif progress == 2:
@@ -70,7 +70,7 @@ def main():
                             print("Not a number. Try Again")
                             continue
                 
-                        newprod["price"] = validp
+                        newprod["_Product__price"] = validp
                         progress+=1
             
                     elif progress == 3:
@@ -82,7 +82,7 @@ def main():
                             print("Not a integer. Try Again!")
                             continue
                 
-                        newprod["stock"] = valids
+                        newprod["_Product__stock"] = valids
                         progress+=1
                     else:
                         Adding = False
