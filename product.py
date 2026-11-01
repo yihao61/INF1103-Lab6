@@ -20,3 +20,6 @@ class Product:
 
     def get_stock(self):
         return self.__stock
+
+    def display_information(self):
+        return f"ID: {self.__id}    | Name: {self.__name}   | Price: ${self.__price}    | Stock: {self.__stock}"

@@ -41,7 +41,7 @@ class Inventory:
             if prod.get_product_id() == idinp:
                 print("\nProduct Found!")
                 print("------------------------------------------------")
-                print(f"ID: {prod.get_product_id()}\nName: {prod.get_name()}\nPrice: ${prod.get_price()}\nStock: {prod.get_stock()}")
+                print(prod.display_information())
                 print("------------------------------------------------")
                 found = True
 
@@ -54,7 +54,7 @@ class Inventory:
         print("\nCurrent Inventory\n"
             "------------------------------------------------")
         for prod in self.__inventory:
-            print(f"ID: {prod.get_product_id()} | Name: {prod.get_name()} | Price: ${prod.get_price()} | Stock: {prod.get_stock()}")
+            print(prod.display_information())
         print("------------------------------------------------")
         return
 
