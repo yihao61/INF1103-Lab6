@@ -3,7 +3,7 @@
         "_Product__id": "P001",
         "_Product__name": "Laptop",
         "_Product__price": 1200.0,
-        "_Product__stock": 15
+        "_Product__stock": 20
     },
     {
         "_Product__id": "P002",
@@ -21,12 +21,24 @@
         "_Product__id": "P004",
         "_Product__name": "Monitor",
         "_Product__price": 299.99,
-        "_Product__stock": 10
+        "_Product__stock": 20
     },
     {
         "_Product__id": "P010",
         "_Product__name": "Table",
         "_Product__price": 699.99,
         "_Product__stock": 15
+    },
+    {
+        "_Product__id": "P005",
+        "_Product__name": "Gaming Chair",
+        "_Product__price": 399.99,
+        "_Product__stock": 20
+    },
+    {
+        "_Product__id": "P006",
+        "_Product__name": "Headphones",
+        "_Product__price": 199.4,
+        "_Product__stock": 20
     }
 ]
